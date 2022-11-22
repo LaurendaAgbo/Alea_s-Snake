@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background: #9cbfde;
+  /* background: -webkit-linear-gradient(to top, #283E51, #0A2342);
+  background: linear-gradient(to top, #283E51, #0A2342);
+  background: -olinear-gradient(to top, #283E51, #0A2342); */
+}
+
+
+.bkg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: url(resources/images/junglepng.parspng.com-4.png) no-repeat center center;
+	background-size: cover;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+#game {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding-top: 1px;
+}
+
+.game-title {
+  margin-top: 20px;
+  font-size: 40px;
+  color: #fefefd;
+  text-align: center;
+}
+
+.game-board {
+  width: 70vw;
+  height: 80vh;
+  margin: auto;
+  background: rgba(42, 219, 215, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(.4px);
+  -webkit-backdrop-filter: blur(.4px);
+  border: 3px solid rgba(255, 255, 255, 0.82);
+  display: flex;
+  flex-direction: column;
+}
+
+.game-top-bar {
+  height: 50px;
+  min-height: 50px;
+  background: #46574980;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0.7px);
+  -webkit-backdrop-filter: blur(0.7px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.82);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 3px;
+}
+
+.game-top-bar svg {
+  width: 24px;
+  margin-right: 8px;
+  margin-bottom: 4px;
+  vertical-align: middle;
+  fill: #fff;
+}
+
+.score {
+  color: #f1ac2e;
+  font-weight: 700;
+}
+
+.score svg {
+  fill: #f1ac2e;
+  margin-bottom: 6px;
+}
+
+.game-main-content {
+  height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: .5%;
+	justify-content: space-between;
+}
+
+.game-bottom-bar {
+  height: 30px;
+  min-height: 30px;
+  background: #46574980;
+  border-radius: 14px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0.7px);
+  -webkit-backdrop-filter: blur(0.7px);
+  border-top: 1px solid rgba(255, 255, 255, 0.82);
+  padding-top: 3px;
+  text-align: center;
+  color: #efefef;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(6, 21, 40, 0.392);
+  z-index: 20;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay.active {
+  display: flex;
+}
+
+.dialog {
+  max-width: 450px;
+  margin: auto;
+  background: rgba(42, 219, 216, 0.544);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2.7px);
+  -webkit-backdrop-filter: blur(2.7px);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog-title {
+  background: rgba(130, 215, 213, 0.3);
+  border-radius: 14px 14px 0 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0.7px);
+  -webkit-backdrop-filter: blur(0.7px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.82);
+  color: #fefefe;
+  text-align: center;
+  font-size: 24px;
+  padding: 10px 5px;
+  text-transform: uppercase;
+}
+
+.dialog-content {
+  font-size: 16px;
+  padding: 20px;
+  color: #efefef;
+}
+
+.dialog-action {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.dialog-button {
+  display: inline-block;
+  padding: 15px 45px;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: 0;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.dialog-button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0cf;
+  border-radius: 10rem;
+  z-index: -2;
+}
+
+.dialog-button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #008fb3;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+
+.dialog-button:hover {
+  color: #fff;
+}
+
+.dialog-button:hover:before {
+  width: 100%;
+}
+
+audio {
+  display: none;
+}
