@@ -24,7 +24,7 @@ body {
 
 
 .bkg {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -54,7 +54,6 @@ body {
 
 .game-board {
   width: 70vw;
-  height: 80vh;
   margin: auto;
   background: rgba(42, 219, 215, 0.1);
   border-radius: 16px;
