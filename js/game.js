@@ -93,8 +93,8 @@ class Game {
 		if (this.has_game_ended(updateElements)) {
 			updateElements.high_score = localStorage.getItem('high_score') > updateElements.score ? localStorage.getItem('high_score') : updateElements.score;
 			localStorage.setItem('high_score', updateElements.high_score);
-			mainClass.stopMusic('');
-			mainClass.playMusic('#loseSound', 0.5);
+			this.stopMusic('');
+			this.playMusic('#loseSound', 0.5);
 			this.showPopup('lose');
 			return;
 		}

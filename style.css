@@ -14,12 +14,9 @@ html {
 }
 
 body {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   background: #9cbfde;
-  /* background: -webkit-linear-gradient(to top, #283E51, #0A2342);
-  background: linear-gradient(to top, #283E51, #0A2342);
-  background: -olinear-gradient(to top, #283E51, #0A2342); */
 }
 
 
@@ -125,7 +122,7 @@ body {
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
